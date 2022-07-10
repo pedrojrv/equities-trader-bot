@@ -1,0 +1,1 @@
+pedrino-update-base -s ../datasets/stocks/
