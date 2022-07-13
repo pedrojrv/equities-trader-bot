@@ -3,7 +3,7 @@ import os
 from polygon import RESTClient
 
 
-def get_client():
+def get_client() -> RESTClient:
     """Get authenticated Polygon RESTClient.
 
     Returns

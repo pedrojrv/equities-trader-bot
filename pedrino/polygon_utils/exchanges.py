@@ -1,8 +1,9 @@
 """Exchanges related data utilities."""
+from typing import Dict
 from pedrino import client
 
 
-def get_stock_exchanges():
+def get_stock_exchanges() -> Dict[str, str]:
     """Retrieve all US exchanges supported by Polygon.
 
     Returns
@@ -10,9 +11,9 @@ def get_stock_exchanges():
     dict
         {exchange_mic_code: exchange_name}
     """
-    polygon_client = client.get_client()
+    cl = client.get_client()
 
-    all_exchanges = polygon_client.get_exchanges()
+    all_exchanges = cl.get_exchanges()
     stock_exchanges = [exchange for exchange in all_exchanges if exchange.asset_class == "stocks"]
     stock_exchanges_dict = {exchange.mic: exchange.name for exchange in stock_exchanges}
     return stock_exchanges_dict

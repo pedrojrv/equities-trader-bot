@@ -1,5 +1,5 @@
 import random
-from pedrino.data_utils import trade_utils
+from pedrino.polygon_utils import trades
 
 
 class MockTradeObject():
@@ -21,7 +21,7 @@ def test_get_average_data_trades():
         exp_total_volume += size
         trades_iterable.append(MockTradeObject(price, size))
 
-    average_price, total_volume, num_trades = trade_utils._get_average_data_trades(trades_iterable)
+    average_price, total_volume, num_trades = trades._get_average_data_trades(trades_iterable)
     assert average_price == exp_average_price
     assert total_volume == exp_total_volume
     assert num_trades == exp_num_trades
