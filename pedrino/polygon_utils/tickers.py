@@ -29,7 +29,7 @@ def get_all(saving_dir: Optional[Path] = None) -> pd.DataFrame:
     stock_exchanges_dict = exchanges.get_stock_exchanges()
 
     # get all stocks for which there is information in Polygon
-    all_polygon_tickers = cl.list_tickers(market=Market.STOCKS, type='CS', limit=100000)
+    all_polygon_tickers = cl.list_tickers(market=Market.STOCKS, type='CS', limit=1000000)
     valid_tickers = [ticker for ticker in all_polygon_tickers if ticker.locale == "us"]
 
     # All polygon tickers will form our base database, we will use its info to call other APIs for more info

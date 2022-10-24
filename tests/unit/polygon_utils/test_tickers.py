@@ -11,5 +11,5 @@ def test_get_all(tmp_path):
 
     all_stocks = pd.read_csv(all_stocks_path)
     all_tickers = all_stocks.ticker.values
-    for popular_tikcer in ['NVDA', 'AMD', 'FB']:
-        assert popular_tikcer in all_tickers
+    for popular_ticker in ['NVDA', 'AMD', 'FB']:
+        assert popular_ticker in all_tickers
